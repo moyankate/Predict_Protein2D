@@ -137,7 +137,7 @@ Performs benchmarking comparison across multiple proteins.
 ### 2. Accuracy of the three prediction methods for one protein
 <div align="center">
   <img src="images/accuracy_single_protein.png" alt="Accuracy comparison for one protein" width="600"/>
-  <p style="font-size: 0.9em; color: #555;">Figure 2: Accuracy comparison of Chou–Fasman, Improved Chou–Fasman, and GOR for a single protein</p>
+  <p style="font-size: 0.9em; color: #555;">Figure 2: Accuracy comparison of Chou–Fasman, Improved Chou–Fasman, and GOR for 5Y53B</p>
 </div>
 
 ### 3. Accuracy of the three prediction methods across multiple proteins
