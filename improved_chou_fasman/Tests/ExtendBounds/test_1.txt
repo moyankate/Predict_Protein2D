@@ -1,0 +1,7 @@
+# ID: extend_both_sides
+# Seed: 4
+# N: 10
+# Scores: 0.5, 1.2, 1.2, 1.2, 1.5, 1.2, 1.2, 1.2, 0.5, 0.5
+# Threshold: 1.0
+# ExpectedL: 2
+# ExpectedR: 6

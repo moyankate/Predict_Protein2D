@@ -1,0 +1,4 @@
+# ID: cwt_impulse_verified
+# InputVals: 0.0, 0.0, 10.0, 0.0, 0.0
+# Scale: 1.0
+# ExpectedVals: -1.135560, 1.720498, 10.000000, 1.720498, -1.135560

@@ -1,0 +1,5 @@
+# ID: mark_single_point
+# ArrSize: 10
+# L: 5
+# R: 5
+# ExpectedTrueIndices: 5

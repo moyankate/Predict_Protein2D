@@ -1,0 +1,4 @@
+# ID: cwt_alternating_verified
+# InputVals: 10.0, -10.0, 10.0, -10.0, 10.0
+# Scale: 1.0
+# ExpectedVals: 7.228336, -5.507838, 4.287884, -5.507838, 7.228336

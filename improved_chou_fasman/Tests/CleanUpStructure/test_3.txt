@@ -1,0 +1,3 @@
+# ID: short_strand
+# Input: CCECC
+# Expected: CCCCC

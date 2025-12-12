@@ -1,0 +1,4 @@
+# ID: cwt_zeros
+# InputVals: 0.0, 0.0, 0.0, 0.0, 0.0
+# Scale: 1.0
+# ExpectedVals: 0.0, 0.0, 0.0, 0.0, 0.0

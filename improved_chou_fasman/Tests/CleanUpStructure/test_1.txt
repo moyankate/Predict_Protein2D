@@ -1,0 +1,3 @@
+# ID: short_helix
+# Input: CCHHCC
+# Expected: CCCCCC
