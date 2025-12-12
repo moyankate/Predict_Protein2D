@@ -1,0 +1,9 @@
+# ID: Alpha_Affinity_Wins
+# Sequence: KKAAAAIVVY
+# Region1Start: 0
+# Region1End: 6
+# Conf1: alpha
+# Region2Start: 4
+# Region2End: 9
+# Conf2: beta
+# ExpectedWinner: R1

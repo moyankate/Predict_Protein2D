@@ -1,0 +1,5 @@
+# ID: Full_Extension_Alpha
+# Sequence: AAAALKEGGGGG
+# Conformation: alpha
+# InputRegions: 4:7
+# ExpectedRegions: 0:8

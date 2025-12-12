@@ -1,0 +1,8 @@
+# ID: Overlap_Adjacent_False
+# Region1Start: 1
+# Region1End: 5
+# Conf1: alpha
+# Region2Start: 5
+# Region2End: 10
+# Conf2: beta
+# Expected: false

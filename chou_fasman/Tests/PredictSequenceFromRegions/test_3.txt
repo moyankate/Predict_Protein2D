@@ -1,0 +1,5 @@
+# ID: Overlap_Alpha_Wins
+# Sequence: AAAAAVVVVVIII
+# AlphaFinal: 3:8
+# BetaFinal: 0:5
+# ExpectedPrediction: EEEHHHHHCCCCC

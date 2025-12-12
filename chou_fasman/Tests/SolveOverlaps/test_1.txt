@@ -1,0 +1,8 @@
+# ID: Reg1_Wins_Keep
+# Sequence: KKKKKKAAAAAIVVY
+# Regions1: 0:7, 10:14
+# Conf1: alpha
+# Regions2: 5:10
+# Conf2: beta
+# Winner: alpha
+# ExpectedRegions: 0:7, 10:14

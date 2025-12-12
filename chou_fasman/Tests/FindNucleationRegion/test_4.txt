@@ -1,0 +1,7 @@
+# ID: No_Region_Found
+# Sequence: ALKEGGGGGGAA
+# Conformation: alpha
+# WindowThreshold: 6
+# WindowSize: 6
+# MinParam: 1.50
+# ExpectedRegions: (empty)

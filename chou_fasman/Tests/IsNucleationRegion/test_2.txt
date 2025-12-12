@@ -1,0 +1,8 @@
+# ID: Fail_on_Alpha
+# Sequence: ALKEMG
+# Conformation: alpha
+# Start: 0
+# End: 6
+# WindowThreshold: 5
+# MinParam: 1.20
+# Expected: false

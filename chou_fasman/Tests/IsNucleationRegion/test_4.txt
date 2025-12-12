@@ -1,0 +1,8 @@
+# ID: Fail_on_Beta
+# Sequence: ENGDH
+# Conformation: beta
+# Start: 0
+# End: 4
+# WindowThreshold: 1
+# MinParam: 1.2
+# Expected: false

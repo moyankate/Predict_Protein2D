@@ -1,0 +1,3 @@
+# ID: Merge_All_Into_One
+# InputRegions: 1:3, 3:5, 4:7, 6:9
+# ExpectedRegions: 1:9

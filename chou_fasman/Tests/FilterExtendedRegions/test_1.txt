@@ -1,0 +1,6 @@
+# ID: Alpha_Region_Pass_Filter
+# Sequence: AAAALKE
+# Conformation: alpha
+# InputRegions: 0:7
+# Threshold: 1.10
+# ExpectedRegions: 0:7

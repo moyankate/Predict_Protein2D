@@ -1,0 +1,7 @@
+# ID: Alpha_Single_Continuous
+# Sequence: ALKEGGGGGGAA
+# Conformation: alpha
+# WindowThreshold: 4
+# WindowSize: 6
+# MinParam: 1.15
+# ExpectedRegions: 0:6

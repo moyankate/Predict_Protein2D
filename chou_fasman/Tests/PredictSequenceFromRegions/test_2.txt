@@ -1,0 +1,5 @@
+# ID: Full_Coverage_H_E
+# Sequence: AAAAAVVVVVIII
+# AlphaFinal: 0:5
+# BetaFinal: 5:13
+# ExpectedPrediction: HHHHHEEEEEEEE

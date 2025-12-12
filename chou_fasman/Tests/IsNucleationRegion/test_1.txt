@@ -1,0 +1,8 @@
+# ID: Alpha_Nucleation_Success
+# Sequence: ALKEMA
+# Conformation: alpha
+# Start: 0
+# End: 6
+# WindowThreshold: 4
+# MinParam: 1.10
+# Expected: true

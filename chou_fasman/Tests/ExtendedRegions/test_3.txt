@@ -1,0 +1,5 @@
+# ID: Partial_Extension_on_N_and_C
+# Sequence: GPPLKEMGGG
+# Conformation: alpha
+# InputRegions: 3:7
+# ExpectedRegions: 2:9

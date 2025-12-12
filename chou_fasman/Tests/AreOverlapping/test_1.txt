@@ -1,0 +1,8 @@
+# ID: Overlap_Partial_True
+# Region1Start: 1
+# Region1End: 5
+# Conf1: alpha
+# Region2Start: 4
+# Region2End: 8
+# Conf2: beta
+# Expected: true

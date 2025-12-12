@@ -1,0 +1,6 @@
+# ID: Alpha_Mixed_Regions_Filter
+# Sequence: IVFYGGGALK
+# Conformation: alpha
+# InputRegions: 0:4, 7:10
+# Threshold: 1.25
+# ExpectedRegions: 7:10

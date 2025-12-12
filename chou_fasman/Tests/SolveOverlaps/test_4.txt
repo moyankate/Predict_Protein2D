@@ -1,0 +1,8 @@
+# ID: Beta_Wins_Keep_Partial
+# Sequence: VIVIYIIKKKKA
+# Regions1: 0:7, 10:14
+# Conf1: beta
+# Regions2: 5:10
+# Conf2: alpha
+# Winner: beta
+# ExpectedRegions: 0:7, 10:14

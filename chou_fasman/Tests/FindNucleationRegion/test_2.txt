@@ -1,0 +1,7 @@
+# ID: Beta_Multiple_Overlapping
+# Sequence: IVFYT
+# Conformation: beta
+# WindowThreshold: 3
+# WindowSize: 4
+# MinParam: 1.30
+# ExpectedRegions: 0:4, 1:5

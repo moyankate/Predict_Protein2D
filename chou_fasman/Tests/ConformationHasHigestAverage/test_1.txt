@@ -1,0 +1,6 @@
+# ID: Alpha_Highest_Avg
+# Sequence: ALAE
+# Conformation: alpha
+# Start: 0
+# End: 4
+# Expected: true

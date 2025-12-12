@@ -1,0 +1,6 @@
+# ID: Beta_Highest_Avg
+# Sequence: IVIY
+# Conformation: beta
+# Start: 0
+# End: 4
+# Expected: true

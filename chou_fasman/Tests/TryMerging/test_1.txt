@@ -1,0 +1,8 @@
+# ID: Merge_Success_Adjacency
+# Start1: 1
+# End1: 5
+# Start2: 5
+# End2: 10
+# ExpectedStart: 1
+# ExpectedEnd: 10
+# ExpectedOK: true

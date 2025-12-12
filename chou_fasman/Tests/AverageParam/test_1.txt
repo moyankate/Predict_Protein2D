@@ -1,0 +1,6 @@
+# ID: Alpha_Normal_Sequence
+# Sequence: ALKE
+# Conformation: alpha
+# Start: 0
+# End: 4
+# Expected: 1.3250

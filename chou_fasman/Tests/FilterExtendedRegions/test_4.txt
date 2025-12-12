@@ -1,0 +1,6 @@
+# ID: Beta_Mixed_Regions_Filter
+# Sequence: IVFYGGGALK
+# Conformation: beta
+# InputRegions: 0:4, 7:10
+# Threshold: 1.25
+# ExpectedRegions: 0:4

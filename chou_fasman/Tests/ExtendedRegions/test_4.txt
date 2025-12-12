@@ -1,0 +1,5 @@
+# ID: Multiple_Regions_Extension
+# Sequence: ALKEGGIVY
+# Conformation: alpha
+# InputRegions: 0:3, 5:8
+# ExpectedRegions: 0:5, 5:8

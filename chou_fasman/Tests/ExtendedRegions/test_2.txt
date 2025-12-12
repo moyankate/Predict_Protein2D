@@ -1,0 +1,5 @@
+# ID: Beta_One_Side_Extension
+# Sequence: DXXCTTTTTTT
+# Conformation: beta
+# InputRegions: 1:4
+# ExpectedRegions: 1:11

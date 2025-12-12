@@ -1,0 +1,3 @@
+# ID: Merge_Unsorted_Nested_And_Overlaps
+# InputRegions: 15:20, 1:10, 18:22, 3:7, 12:13
+# ExpectedRegions: 1:10, 12:13, 15:22

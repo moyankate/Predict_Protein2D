@@ -1,0 +1,3 @@
+# ID: Merge_Partial_With_Gap
+# InputRegions: 1:4, 4:6, 8:12, 11:14
+# ExpectedRegions: 1:6, 8:14

@@ -1,0 +1,6 @@
+# ID: Invalid_Range_Zero
+# Sequence: ALKE
+# Conformation: alpha
+# Start: 2
+# End: 2
+# Expected: 0.0

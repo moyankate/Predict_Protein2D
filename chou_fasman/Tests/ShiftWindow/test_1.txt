@@ -1,0 +1,8 @@
+# ID: Shift_C_Success
+# Sequence: ALKEGGGGGGGAA
+# Start: 5
+# End: 9
+# Terminus: C
+# ExpectedStart: 6
+# ExpectedEnd: 10
+# ExpectedOK: true

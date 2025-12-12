@@ -1,0 +1,5 @@
+# ID: Coil_Start_Middle_End
+# Sequence: GPGPLKKAAAVIVYTTG
+# AlphaFinal: 4:8
+# BetaFinal: 12:16
+# ExpectedPrediction: CCCCHHHHCCCCEEEEC

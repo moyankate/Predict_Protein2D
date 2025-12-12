@@ -1,0 +1,8 @@
+# ID: Beta_Nucleation_Success
+# Sequence: LTXFH
+# Conformation: beta
+# Start: 0
+# End: 4
+# WindowThreshold: 3
+# MinParam: 0.5
+# Expected: true

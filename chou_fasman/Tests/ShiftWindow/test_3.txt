@@ -1,0 +1,8 @@
+# ID: Shift_C_Failure_Boundary
+# Sequence: ALKE
+# Start: 0
+# End: 4
+# Terminus: C
+# ExpectedStart: 0
+# ExpectedEnd: 0
+# ExpectedOK: false

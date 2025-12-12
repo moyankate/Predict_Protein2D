@@ -1,0 +1,5 @@
+# ID: Head_Coil_And_Between_Beta_Gaps
+# Sequence: GGIVVYIIGGTTTT
+# AlphaFinal: (empty)
+# BetaFinal: 2:7, 9:14
+# ExpectedRegions: 0:2, 7:9

@@ -1,0 +1,6 @@
+# ID: Beta_Loses_to_Coil
+# Sequence: GPGP
+# Conformation: beta
+# Start: 0
+# End: 4
+# Expected: true

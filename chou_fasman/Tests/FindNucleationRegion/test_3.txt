@@ -1,0 +1,7 @@
+# ID: Alpha_Two_Separated_Regions
+# Sequence: ALKEGIVY
+# Conformation: alpha
+# WindowThreshold: 2
+# WindowSize: 3
+# MinParam: 1.20
+# ExpectedRegions: 0:3, 1:4

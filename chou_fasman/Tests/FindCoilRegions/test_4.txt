@@ -1,0 +1,5 @@
+# ID: Fully_Predicted_No_Coil
+# Sequence: LKKAAALKKAAALKKAAA
+# AlphaFinal: 0:9, 9:18
+# BetaFinal: (empty)
+# ExpectedRegions: (empty)

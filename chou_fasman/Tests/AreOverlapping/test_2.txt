@@ -1,0 +1,8 @@
+# ID: Overlap_Contained_True
+# Region1Start: 1
+# Region1End: 10
+# Conf1: alpha
+# Region2Start: 3
+# Region2End: 7
+# Conf2: beta
+# Expected: true

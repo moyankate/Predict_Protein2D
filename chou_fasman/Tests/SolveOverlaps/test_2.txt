@@ -1,0 +1,8 @@
+# ID: Beta_Removed_By_Alpha
+# Sequence: KKKKKKAAAAAIVVY
+# Regions1: 4:11
+# Conf1: beta
+# Regions2: 0:6
+# Conf2: alpha
+# Winner: alpha
+# ExpectedRegions: (empty)

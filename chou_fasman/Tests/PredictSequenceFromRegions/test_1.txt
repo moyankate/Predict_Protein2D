@@ -1,0 +1,5 @@
+# ID: Alpha_Coil_Beta
+# Sequence: HHHHCCCEEEDDD
+# AlphaFinal: 0:4
+# BetaFinal: 7:13
+# ExpectedPrediction: HHHHCCCEEEEEE

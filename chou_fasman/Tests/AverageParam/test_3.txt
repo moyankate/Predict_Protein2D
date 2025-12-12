@@ -1,0 +1,6 @@
+# ID: Middle_Fragment_Check
+# Sequence: GGGALKEGGG
+# Conformation: alpha
+# Start: 3
+# End: 7
+# Expected: 1.3250
