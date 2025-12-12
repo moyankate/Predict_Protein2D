@@ -28,15 +28,6 @@ var betaParam = map[rune]float64{
 	'X': 1.00,
 }
 
-// Parameters for coil is provided in origin paper but is not used in this code.
-// var coilParam = map[rune]float64{
-// 	'A': 0.82, 'R': 1.05, 'N': 1.13, 'D': 1.09, 'C': 0.98,
-// 	'Q': 0.89, 'E': 0.91, 'G': 1.25, 'H': 1.02, 'I': 0.85,
-// 	'L': 0.84, 'K': 0.98, 'M': 0.85, 'F': 0.87, 'P': 1.18,
-// 	'S': 1.05, 'T': 1.03, 'W': 0.91, 'Y': 0.90, 'V': 0.83,
-// 	'X': 1.00,
-// }
-
 func main() {
 	// test sequence is stored in "Data/fileName.txt"
 	const filepath = "Data/5Y53B.txt"
@@ -72,7 +63,7 @@ func main() {
     // 6. Find Coil regions (new step)
     coilFinal := FindCoilRegions(alphaFinal, betaFinal)
 
-    // NEW STEP: Generate the full prediction sequence (H/E/C)
+    // 7. Generate the full prediction sequence (H/E/C)
     predictedSequence := PredictSequenceFromRegions(alphaFinal, betaFinal)
 
     // ----- Output ----- //
@@ -97,6 +88,6 @@ func main() {
     if errC != nil {
         fmt.Printf("Failed to draw a barchart: %v\n", errC)
     } else {
-        fmt.Println("\n✅ Successfullt saved the barchart to 'prediction_bar_chart_custom.png'")
+        fmt.Println("\nSuccessfully saved the barchart to 'prediction_bar_chart_custom.png'")
     }
 }
