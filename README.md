@@ -74,31 +74,37 @@ install.packages(c(
   "shiny",
   "shinyjs",
   "tidyverse"
+  "ggplot"
 ))
 ```
 
 ## 4. Running GO code
 ### Chou-Fasman
+Open `~/chou_fasman/main.go', change the file path to the path of `.txt` file containing the sequence you want to predict. Then simply run `./chou_fasman` to get the prediction result and the "barcode" image.
 ```go
 cd chou_fasman
-go test // test for subroutines implemented in Chous-Fasman
-./chou_fasman # run code
+go test
+./chou_fasman
 ```
 
 ### Improved Chou–Fasman
+Open ./improved_chou_fasman, simply run `./chou_fasman "path/to/your/file"` to get the prediction result and the image.
 ```go
 cd improved_chou_fasman
-go test // test for subroutines implemented in CImproved Chou–Fasman
-./improved_chou_fasman # run code
+go test
+./improved_chou_fasman "path/to/your/file"
 ```
 
 ### GOR
+First train the GOR model and save as .json file. Or you skip this step and simply use the model we've already trained by data in '~/GOR/data/training/list.txt`.
 ```go
 // Training the algorithm
-cd GOR/train
+cd GOR
 go run train/main.go -ids data/training/list.txt -pssm_dir data/training/pssm -dssp_dir data/training/dssp -out gor_model.json
+```
 
-
+For prediction, you can choose `-pssm', '-fasta', or '-seq'. For `-pssm' and '-fasta', upload the `.pssm` or `.fasta` file. For `-seq`, type the sequence to predict in the command line. 
+```go
 // Prediction (PSSM input)
 go run ./predict \
   -model gor_model.json \
@@ -111,21 +117,18 @@ go run ./predict \
 ```
 
 ## 5. RShiny
-Run the Shiny app directly
-Upload .txt file as input
+Open `~/app.R` in RStudio, click `Run App`.
 
+Then upload .txt file as input.
 Supported Input Types:
-1. Single amino acid sequence (1 line)
-
-Displays predicted structure for all three algorithms.
+1. Amino acid sequence (1 line)
+Available to use mode 1-3, displaying predicted structure for three algorithms.
 
 2. Sequence + experimental structure (2 line)
-
-Shows predictions and accuracy comparison across the three algorithms.
+Available to use mode 1-5, displaying predicted structure and accuracy based on experimental structure for three algorithms.
 
 3. Multiple entries: name + sequence + structure
-
-Performs benchmarking comparison across multiple proteins.
+Available to use mode 5, performing benchmarking comparison across multiple proteins.
 
 ## 6. Example for Results
 ### 1. Predicted secondary structure
