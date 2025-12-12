@@ -39,6 +39,9 @@ project/
 │   ├── data/
 │   │   ├── blindTest
 │   │   ├── training
+│   │   │   ├── pssm
+│   │   │   ├── dssp
+│   │   │   ├── list.txt
 │   ├── test/
 │   ├── train/
 │   │   ├── main.go
