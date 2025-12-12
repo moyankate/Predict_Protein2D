@@ -1,0 +1,7 @@
+# ID: test3
+# FileContent: 
+>test_protein
+E-E-E-E-E-E-E-E-E-E
+
+# Expected: E-E-E-E-E-E-E-E-E-E
+# ShouldErr: false

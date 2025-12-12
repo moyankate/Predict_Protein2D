@@ -1,0 +1,6 @@
+# ID: test3
+# FileContent: 
+>single_aa
+A
+# Expected: A
+# ShouldErr: false

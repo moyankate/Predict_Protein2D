@@ -1,0 +1,5 @@
+# ID: test4
+# ModelFile: Invalid JSON content
+This is not valid JSON
+# ExpectedWS: 0
+# ShouldErr: true

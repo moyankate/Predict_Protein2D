@@ -1,0 +1,9 @@
+# ID: test4
+# Model: {
+  "window_size": 0,
+  "aa_list": [],
+  "H": [],
+  "E": [],
+  "C": []
+}
+# ShouldErr: false

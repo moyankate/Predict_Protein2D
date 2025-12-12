@@ -1,0 +1,4 @@
+# ID: test4
+# Sequence: HELLO
+# ExpectedLen: 5
+# CheckValues: 0:H, 1:E, 2:L, 4:O

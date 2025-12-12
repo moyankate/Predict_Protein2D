@@ -1,0 +1,10 @@
+# ID: test3
+# ModelFile: {
+  "window_size": 1,
+  "aa_list": ["A"],
+  "H": [[1.0]],
+  "E": [[0.0]],
+  "C": [[0.0]]
+}
+# ExpectedWS: 1
+# ShouldErr: false

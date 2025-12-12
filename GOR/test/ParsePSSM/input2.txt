@@ -1,0 +1,18 @@
+# ID: test2
+# FileContent: Header line 0
+Header line 1
+Header line 2
+    A  R  N  D  C  Q  E  G  H  I  L  K  M  F  P  S  T  W  Y  V
+   1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+   1  A  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20  0  0
+   2  R  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21  0  0
+   3  N  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22  0  0
+Footer line 1
+Footer line 2
+Footer line 3
+Footer line 4
+Footer line 5
+Footer line 6
+# ExpectedLen: 3
+# CheckValues: 0:0.01, 1:0.02
+# ShouldErr: false

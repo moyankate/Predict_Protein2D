@@ -1,0 +1,6 @@
+# ID: test2
+# FileContent: 
+>short_protein
+ACDEFGHIKLMNPQRSTVWY
+# Expected: ACDEFGHIKLMNPQRSTVWY
+# ShouldErr: false

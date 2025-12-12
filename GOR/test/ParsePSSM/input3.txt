@@ -1,0 +1,15 @@
+# ID: test3
+# FileContent: Line 0
+Line 1
+Line 2
+            A   R   N   D   C   Q   E   G   H   I   L   K   M   F   P   S   T   W   Y   V   A   R   N   D   C   Q   E   G   H   I   L   K   M   F   P   S   T   W   Y   V
+    1  A  10  20  30  40  50  60  70  80  90 100 110 120 130 140 150 160 170 180 190 200 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150 160 170 180 190 200  0  0
+Footer line 1
+Footer line 2
+Footer line 3
+Footer line 4
+Footer line 5
+Footer line 6
+# ExpectedLen: 1
+# CheckValues: 0:0.10
+# ShouldErr: false

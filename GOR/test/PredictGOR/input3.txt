@@ -1,0 +1,10 @@
+# ID: test3
+# Model: {
+  "window_size": 1,
+  "aa_list": ["A"],
+  "H": [[0.0]],
+  "E": [[0.0]],
+  "C": [[1.0]]
+}
+# Profile: [[1.0], [1.0], [1.0]]
+# Expected: CCC

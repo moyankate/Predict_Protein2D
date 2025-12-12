@@ -1,0 +1,4 @@
+# ID: test2
+# Sequence: AC
+# ExpectedLen: 2
+# CheckValues: 0:A, 1:C

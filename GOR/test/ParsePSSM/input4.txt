@@ -1,0 +1,6 @@
+# ID: test4
+# FileContent: Header line
+Very short file
+# ExpectedLen: 0
+# CheckValues: 
+# ShouldErr: false

@@ -1,0 +1,7 @@
+# ID: test1
+# FileContent: 
+>d1a9xa1
+-----------------HHHHHHHHHH--E--HHHHHHHHHH--E-HHHHHHHH---HHHHHHHHHHHHHHHHHHHH------HHHHHHHHH----HHHHHHH----HHHHHHHHHH-----EEEE---E--------EEEEEE---------
+
+# Expected: -----------------HHHHHHHHHH--E--HHHHHHHHHH--E-HHHHHHHH---HHHHHHHHHHHHHHHHHHHH------HHHHHHHHH----HHHHHHH----HHHHHHHHHH-----EEEE---E--------EEEEEE---------
+# ShouldErr: false

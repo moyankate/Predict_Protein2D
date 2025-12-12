@@ -1,0 +1,9 @@
+go run train/main.go -ids data/training/list.txt -pssm_dir data/training/pssm -dssp_dir data/training/dssp -out gor_model.json
+
+go run ./predict \
+  -model gor_model.json \
+  -pssm "data/blindTest/pssm/6B8B:A.pssm"
+
+go run ./predict \
+  -model gor_model.json \
+  -seq "GSPRTVEEIFKDYSARRAALLRALTKDVDDFYSQCDPEKENLCLYGHPNESWEVNLPAEEVPPELPEPALGINFARDGMQRKDWLSLVAVHSDCWLLSVSFYFGARLNRNERKRLFSLINDLPTLFDVVTGRKAM"

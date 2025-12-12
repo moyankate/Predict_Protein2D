@@ -1,0 +1,7 @@
+# ID: test2
+# FileContent: 
+Header line
+HHHHH---EEE---HHH
+
+# Expected: HHHHH---EEE---HHH
+# ShouldErr: false

@@ -1,0 +1,6 @@
+# ID: test3
+# IDList: 
+# PSSMFile: 
+# DSSPFile: 
+# WindowSize: 3
+# ShouldErr: false
