@@ -85,7 +85,7 @@ install.packages(c(
 ## 4. Running GO code
 ### Chou-Fasman
 Open `~/chou_fasman/main.go`, change the file path to the path of `.txt` file containing the sequence you want to predict. Then simply run `./chou_fasman` to get the prediction result and the "barcode" image.
-```go
+```zsh
 cd chou_fasman
 go test
 ./chou_fasman
@@ -93,7 +93,7 @@ go test
 
 ### Improved Chou–Fasman
 Open ./improved_chou_fasman, simply run `./chou_fasman "path/to/your/file"` to get the prediction result and the image.
-```go
+```zsh
 cd improved_chou_fasman
 go test
 ./improved_chou_fasman "path/to/your/file"
@@ -101,14 +101,14 @@ go test
 
 ### GOR
 First train the GOR model and save as `.json` file. Or you skip this step and simply use the model we've already trained by data in `~/GOR/data/training/list.txt`.
-```go
+```zsh
 // Training the algorithm
 cd GOR
 go run train/main.go -ids data/training/list.txt -pssm_dir data/training/pssm -dssp_dir data/training/dssp -out gor_model.json
 ```
 
 For prediction, you can choose `-pssm`, `-fasta', or `-seq`. For `-pssm' and `-fasta`, upload the `.pssm` or `.fasta` file. For `-seq`, type the sequence to predict in the command line. 
-```go
+```zsh
 // Prediction (PSSM input)
 go run ./predict \
   -model gor_model.json \
