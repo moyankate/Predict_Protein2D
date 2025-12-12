@@ -17,7 +17,7 @@ All algorithms were implemented in **Go (Golang)**, and an **R Shiny** web appli
 ---
 
 ## 2. Folder Structure
-
+```
 project/
 ├── chou_fasman/
 │   ├── Data/
@@ -51,6 +51,7 @@ project/
 ├── data/
 ├── app.R
 └── README.md
+```
 
 > **Note:** The `Tests` folder for each algorithm contains testing data for subroutines.
 
@@ -128,13 +129,22 @@ Performs benchmarking comparison across multiple proteins.
 
 ## 6. Example for Results
 ### 1. Predicted secondary structure
-![Predicted secondary structure](images/prediction_example.png)
+<div align="center">
+  <img src="images/prediction_example.png" alt="Predicted secondary structure" width="600"/>
+  <p style="font-size: 0.9em; color: #555;">Figure 1: Predicted secondary structure of 5Y53B</p>
+</div>
 
 ### 2. Accuracy of the three prediction methods for one protein
-![Accuracy comparison for one protein](images/accuracy_single_protein.png)
+<div align="center">
+  <img src="images/accuracy_single_protein.png" alt="Accuracy comparison for one protein" width="600"/>
+  <p style="font-size: 0.9em; color: #555;">Figure 2: Accuracy comparison of Chou–Fasman, Improved Chou–Fasman, and GOR for a single protein</p>
+</div>
 
 ### 3. Accuracy of the three prediction methods across multiple proteins
-![Accuracy comparison across multiple proteins](images/accuracy_multiple_proteins.png)
+<div align="center">
+  <img src="images/accuracy_multiple_proteins.png" alt="Accuracy comparison across multiple proteins" width="600"/>
+  <p style="font-size: 0.9em; color: #555;">Figure 3: Accuracy comparison of the three methods across multiple proteins</p>
+</div>
 
 
 ## 7. Notes
