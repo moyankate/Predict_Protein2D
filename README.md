@@ -45,15 +45,15 @@ project/
 │   ├── predict/
 │   │   ├── drawing.go
 │   │   ├── main.go
-│   ├── Tests/
 │   ├── gor.go
 │   ├── functions_test.go
 ├── data/
+│   ├── input_for_Rshiny.txt/
 ├── app.R
 └── README.md
 ```
 
-> **Note:** The `Tests` folder for each algorithm contains testing data for subroutines.
+> **Note:** The `Tests` or `test` folder for each algorithm contains testing data for subroutines.
 
 ---
 
@@ -67,6 +67,7 @@ project/
     https://programmingforlovers.com/wp-content/uploads/canvas.zip
 
 ### R Shiny Frontend
+Install R and RStudio.
 Install the following R packages:
 
 ```r
@@ -80,7 +81,7 @@ install.packages(c(
 
 ## 4. Running GO code
 ### Chou-Fasman
-Open `~/chou_fasman/main.go', change the file path to the path of `.txt` file containing the sequence you want to predict. Then simply run `./chou_fasman` to get the prediction result and the "barcode" image.
+Open `~/chou_fasman/main.go`, change the file path to the path of `.txt` file containing the sequence you want to predict. Then simply run `./chou_fasman` to get the prediction result and the "barcode" image.
 ```go
 cd chou_fasman
 go test
@@ -96,14 +97,14 @@ go test
 ```
 
 ### GOR
-First train the GOR model and save as .json file. Or you skip this step and simply use the model we've already trained by data in '~/GOR/data/training/list.txt`.
+First train the GOR model and save as `.json` file. Or you skip this step and simply use the model we've already trained by data in `~/GOR/data/training/list.txt`.
 ```go
 // Training the algorithm
 cd GOR
 go run train/main.go -ids data/training/list.txt -pssm_dir data/training/pssm -dssp_dir data/training/dssp -out gor_model.json
 ```
 
-For prediction, you can choose `-pssm', '-fasta', or '-seq'. For `-pssm' and '-fasta', upload the `.pssm` or `.fasta` file. For `-seq`, type the sequence to predict in the command line. 
+For prediction, you can choose `-pssm`, `-fasta', or `-seq`. For `-pssm' and `-fasta`, upload the `.pssm` or `.fasta` file. For `-seq`, type the sequence to predict in the command line. 
 ```go
 // Prediction (PSSM input)
 go run ./predict \
@@ -117,17 +118,17 @@ go run ./predict \
 ```
 
 ## 5. RShiny
-Open `~/app.R` in RStudio, click `Run App`.
+Open `~/app.R` in RStudio, and click `Run App`.
 
-Then upload .txt file as input.
+Then upload `.txt` file as input.
 Supported Input Types:
 1. Amino acid sequence (1 line)
 Available to use mode 1-3, displaying predicted structure for three algorithms.
 
-2. Sequence + experimental structure (2 line)
+2. Sequence + experimental determined structure (2 line)
 Available to use mode 1-5, displaying predicted structure and accuracy based on experimental structure for three algorithms.
 
-3. Multiple entries: name + sequence + structure
+3. Multiple pairs of protein name + sequence + structure
 Available to use mode 5, performing benchmarking comparison across multiple proteins.
 
 ## 6. Example for Results
