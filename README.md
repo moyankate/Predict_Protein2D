@@ -115,12 +115,15 @@ Upload .txt file as input
 
 Supported Input Types:
 1. Single amino acid sequence (1 line)
+
 Displays predicted structure for all three algorithms.
 
 2. Sequence + experimental structure (2 line)
+
 Shows predictions and accuracy comparison across the three algorithms.
 
 3. Multiple entries: name + sequence + structure
+
 Performs benchmarking comparison across multiple proteins.
 
 ## 6. Example for Results
