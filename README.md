@@ -117,6 +117,11 @@ cd GOR
 go run train/main.go -ids data/training/list.txt -pssm_dir data/training/pssm -dssp_dir data/training/dssp -out gor_model.json
 ```
 
+Then generate the exe file for Rshiny
+```zsh
+go build -o gor_predict ./predict
+```
+
 For prediction, you can choose `-pssm`, `-fasta', or `-seq`. For `-pssm' and `-fasta`, upload the `.pssm` or `.fasta` file. For `-seq`, type the sequence to predict in the command line. 
 ```zsh
 // Prediction (PSSM input)
