@@ -60,7 +60,7 @@ parse_string_output <- function(output_lines, seq_len) {
   }
   
   if (is.null(candidate) || nchar(gsub("-", "C", candidate)) != seq_len) {
-    valid_lines <- grep("^[HEC\\-X]+$", trimws(output_lines), value = TRUE)
+    valid_lines <- grep("^[HECX-]+$", trimws(output_lines), value = TRUE)
     if (length(valid_lines) > 0) {
       lens <- nchar(valid_lines)
       best_idx <- which.min(abs(lens - seq_len))
@@ -360,6 +360,9 @@ server <- function(input, output, session) {
       # GOR
       if (!is.null(exe_gor) && file.exists(model_path)) {
         args <- c("-model", shQuote(model_path), "-fasta", shQuote(input_fasta_abs))
+        print("====== GOR RAW OUTPUT START ======")
+        print(out)
+        print("====== GOR RAW OUTPUT END ======")
         out <- system2(exe_gor, args = args, stdout = TRUE, stderr = TRUE)
         parsed <- parse_string_output(out, n)
         if (!is.null(parsed) && nchar(parsed) == n) res_gor <- parsed
