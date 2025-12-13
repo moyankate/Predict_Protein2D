@@ -29,7 +29,12 @@ var betaParam = map[rune]float64{
 
 func main() {
 	// test sequence is stored in "Data/fileName.txt"
-	const filepath = "Data/5Y53B.txt"
+	var filepath string
+	if len(os.Args) == 2 {
+		filepath = os.Args[1]
+	} else {
+		filepath = "Data/5Y53B.txt"
+	}
 	seq, err := ReadSequenceFromFile(filepath)
 	if err != nil {
 		fmt.Printf("Error: %v\n", err)
