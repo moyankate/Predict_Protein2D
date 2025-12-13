@@ -21,6 +21,14 @@ func main() {
 	seqString := flag.String("seq", "", "Directly type the amino acid sequence string (e.g. 'MVLSEGEWQL') (optional, mutually exclusive with -pssm and -fasta)")
 	flag.Parse()
 
+	if *pssmFile == "" && *fastaFile == "" && *seqString == "" {
+		if len(os.Args) > 1 && os.Args[1] != "" {
+			*fastaFile = os.Args[1]
+		} else {
+			log.Fatal("provide either -pssm OR -fasta OR -seq")
+		}
+	}
+
 	model, err := gor.LoadGORModel(*modelFile)
 	if err != nil {
 		log.Fatalf("LoadGORModel error: %v", err)
