@@ -10,6 +10,7 @@ import (
 	"flag"
 	"fmt"
 	"log"
+	"os"
 
 	gor "protein_prediction/GOR"
 )
