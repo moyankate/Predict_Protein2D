@@ -1,3 +1,9 @@
+// Author: Kate Zhang
+// Date: 2025-11-20
+// Description: program to train GOR model for protein secondary structure prediction
+// Input: a list of protein IDs, a directory of PSSM files, and a directory of DSSP files through command-line arguments
+// Output: trained GOR model JSON file
+
 package main
 
 import (
@@ -5,7 +11,7 @@ import (
 	"fmt"
 	"log"
 
-	gor "GOR"
+	gor "protein_prediction/GOR"
 )
 
 func main() {
