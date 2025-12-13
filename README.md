@@ -167,4 +167,4 @@ This project was developed by:
 - Yu-Lun Chen
 
 ## 9. Disclaimer
-This README and the essay has been revised for formatting and language clarity with AI assistance. Portions of the testing functions in `functions_test.go`, the test data, and most comments were generated using AI tools.
+This README and the essay has been revised for formatting and language clarity with AI assistance. Portions of the testing functions in `functions_test.go`, the drawing code in `drawing.go`, and most comments were generated using AI tools.
