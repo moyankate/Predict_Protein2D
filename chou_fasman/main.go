@@ -10,7 +10,6 @@ import (
 	"os"
 )
 
-
 // parameter
 var alphaParam = map[rune]float64{
 	'A': 1.42, 'R': 0.98, 'N': 0.67, 'D': 1.01, 'C': 0.70,
@@ -37,57 +36,56 @@ func main() {
 		os.Exit(1)
 	}
 	SEQUENCE = seq
-	
+
 	// 1. calculate the possible nucleation region
 	// Alpha: window size = 6, threshold = 4, min param = 1
 	alphaRegions := FindNucleationRegion(4, 6, 1.0, "alpha")
 	// Beta: window size = 5, threshold = 3, min param = 1
 	betaRegions := FindNucleationRegion(3, 5, 1.0, "beta")
 
-	// 2. Extend each nucleation 
+	// 2. Extend each nucleation
 	alphaRegions = ExtendedRegions(alphaRegions, "alpha")
 	betaRegions = ExtendedRegions(betaRegions, "beta")
 
 	// 3. Filter out the extended regions
 	alphaRegions = FilterExtendedRegions(alphaRegions, "alpha", 1.03)
-	betaRegions = FilterExtendedRegions(betaRegions, "beta", 1.05)	
+	betaRegions = FilterExtendedRegions(betaRegions, "beta", 1.05)
 
 	// 4. Merge extended regions
 	alphaRegions = MergeOverlappingRegions(alphaRegions)
 	betaRegions = MergeOverlappingRegions(betaRegions)
 
 	// 5. Solve the overlapped regions
-    alphaFinal := SolveOverlaps(alphaRegions, "alpha", betaRegions, "beta")
-    betaFinal := SolveOverlaps(betaRegions, "beta", alphaRegions, "alpha")
-    
-    // 6. Find Coil regions (new step)
-    coilFinal := FindCoilRegions(alphaFinal, betaFinal)
+	alphaFinal := SolveOverlaps(alphaRegions, "alpha", betaRegions, "beta")
+	betaFinal := SolveOverlaps(betaRegions, "beta", alphaRegions, "alpha")
 
-    // 7. Generate the full prediction sequence (H/E/C)
-    predictedSequence := PredictSequenceFromRegions(alphaFinal, betaFinal)
+	// 6. Find Coil regions (new step)
+	coilFinal := FindCoilRegions(alphaFinal, betaFinal)
 
-    // ----- Output ----- //
-    fmt.Println("--- Final Output ---")
+	// 7. Generate the full prediction sequence (H/E/C)
+	predictedSequence := PredictSequenceFromRegions(alphaFinal, betaFinal)
 
-    fmt.Println("Alpha regions:")
-    fmt.Println("Alpha (H): ", alphaFinal)
+	// ----- Output ----- //
+	fmt.Println("--- Final Output ---")
 
-    fmt.Println("\nBeta regions:")
-    fmt.Println("Beta (E): ", betaFinal)
+	fmt.Println("Alpha regions:")
+	fmt.Println("Alpha (H): ", alphaFinal)
 
-    fmt.Println("\nCoil regions:")
-    fmt.Println("Coil (C): ", coilFinal)
-    
-    fmt.Println("\nPredicted Sequence (H/E/C):")
-    fmt.Println(predictedSequence)
-    
+	fmt.Println("\nBeta regions:")
+	fmt.Println("Beta (E): ", betaFinal)
 
-    // Canvas to draw barchart
-    // PASS the predictedSequence INSTEAD of alphaFinal, betaFinal
-    errC := drawPredictionBarChartCanvas(predictedSequence, "prediction_bar_chart_custom.png")
-    if errC != nil {
-        fmt.Printf("Failed to draw a barchart: %v\n", errC)
-    } else {
-        fmt.Println("\nSuccessfully saved the barchart to 'prediction_bar_chart_custom.png'")
-    }
+	fmt.Println("\nCoil regions:")
+	fmt.Println("Coil (C): ", coilFinal)
+
+	fmt.Println("\nPredicted Sequence (H/E/C):")
+	fmt.Println(predictedSequence)
+
+	// Canvas to draw barchart
+	// PASS the predictedSequence INSTEAD of alphaFinal, betaFinal
+	errC := drawPredictionBarChartCanvas(predictedSequence, "chou_fasman_prediction_bar_chart.png")
+	if errC != nil {
+		fmt.Printf("Failed to draw a barchart: %v\n", errC)
+	} else {
+		fmt.Println("\nSuccessfully saved the barchart to 'chou_fasman_prediction_bar_chart.png'")
+	}
 }
