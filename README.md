@@ -83,6 +83,16 @@ install.packages(c(
 ```
 
 ## 4. Running GO code
+All the code should be running in `GO111MODULE=off`.
+Check
+```zsh
+go env GO111MODULE
+```
+If `on`, please turn if off.
+```zsh
+export GO111MODULE=off
+```
+
 ### Chou-Fasman
 Open `~/chou_fasman/main.go`, change the file path to the path of `.txt` file containing the sequence you want to predict. Then simply run `./chou_fasman` to get the prediction result and the "barcode" image.
 ```zsh
