@@ -1,18 +1,20 @@
 package main
 
 import (
+	"fmt"
 	"math"
+	"os"
+	"strings"
 )
 
-
-// Morlet Wavelet Function (Equation 1) 
-func morlet(t float64) float64 {
+// Morlet Wavelet Function (Equation 1)
+func Morlet(t float64) float64 {
 	return math.Exp(-0.5*t*t) * math.Cos(5*t)
 }
 
-// CWT Continuous Wavelet Transform (Equation 3) 
-// Scale a = 9 is chosen 
-func computeCWT(seqVals []float64, scale float64) []float64 {
+// CWT Continuous Wavelet Transform (Equation 3)
+// Scale a = 9 is chosen
+func ComputeCWT(seqVals []float64, scale float64) []float64 {
 	n := len(seqVals)
 	coeffs := make([]float64, n)
 	window := int(3.0 * scale)
@@ -22,7 +24,7 @@ func computeCWT(seqVals []float64, scale float64) []float64 {
 		for k := b - window; k <= b+window; k++ {
 			if k >= 0 && k < n {
 				t := float64(k-b) / scale
-				sum += seqVals[k] * morlet(t)
+				sum += seqVals[k] * Morlet(t)
 			}
 		}
 		coeffs[b] = sum / math.Sqrt(scale)
@@ -32,8 +34,11 @@ func computeCWT(seqVals []float64, scale float64) []float64 {
 
 // Algorithm Flow
 
-func predictStructure(seq string) string {
+func PredictStructure(seq string) string {
 	n := len(seq)
+	if n == 0 {
+		return ""
+	}
 
 	// A. Prepare Data
 	hVals := make([]float64, n)
@@ -51,43 +56,46 @@ func predictStructure(seq string) string {
 	}
 
 	// B. Nucleation by CWT
-	cwt := computeCWT(hVals, 9.0)
+	cwt := ComputeCWT(hVals, 9.0)
 	nucleationSites := make([]bool, n)
-	
+
 	for i := 1; i < n-1; i++ {
 		isPeak := cwt[i] > cwt[i-1] && cwt[i] > cwt[i+1]
 		isValley := cwt[i] < cwt[i-1] && cwt[i] < cwt[i+1]
-		
-		// filtering: noise floor of digital signals 
+
+		// filtering: noise floor of digital signals
 		if (isPeak || isValley) && math.Abs(cwt[i]) > 0.1 {
 			nucleationSites[i] = true
 		}
 	}
 
 	// C. Extension Thresholds
-	// Specifically for Alpha/Beta proteins from Table 7 
-	thresholdH := 1.00 
-	thresholdE := 1.02 
+	// Specifically for Alpha/Beta proteins from Table 7
+	thresholdH := 0.9 //1.0
+	thresholdE := 1.2 //1.05
 
 	rawH := make([]bool, n)
 	rawE := make([]bool, n)
 
 	for seed, isSeed := range nucleationSites {
-		if !isSeed { continue }
+		if !isSeed {
+			continue
+		}
 
 		// Extend Segment
-		hL, hR := extendBounds(seed, n, paVals, thresholdH)
-		eL, eR := extendBounds(seed, n, pbVals, thresholdE)
-		
+		hL, hR := ExtendBounds(seed, n, paVals, thresholdH)
+		eL, eR := ExtendBounds(seed, n, pbVals, thresholdE)
+
 		// Mark candidates
-		markRegion(rawH, hL, hR)
-		markRegion(rawE, eL, eR)
+		MarkRegion(rawH, hL, hR)
+		MarkRegion(rawE, eL, eR)
 	}
 
 	// D. Refinement / Conflict Resolution
 	// Since segments from different seeds can have complex overlaps (partial/full),
 	// we implement a per-residue score comparison which is mathematically equivalent to a "locally weighted average" decision.
 	final := make([]rune, n)
+
 	for i := 0; i < n; i++ {
 		final[i] = 'C' // Default Coil
 
@@ -99,43 +107,47 @@ func predictStructure(seq string) string {
 				final[i] = 'E'
 			}
 		} else if rawH[i] {
-			final[i] = 'H'
+			final[i] = 'H' //more conflict
 		} else if rawE[i] {
 			final[i] = 'E'
 		}
 	}
 
 	// E. Biological Cleanup
-	// Remove helix < 3 and strand < 2 
-	return cleanUpStructure(string(final))
+	// Remove helix < 3 and strand < 2
+	return CleanUpStructure(string(final))
 }
 
 // extendBounds extends from a nucleation seed using propensity scores, and returns the candidate segment bounds (left, right).
-func extendBounds(seed int, n int, scores []float64, threshold float64) (int, int) {
+func ExtendBounds(seed int, n int, scores []float64, threshold float64) (int, int) {
 	left := seed
-	for left >= 4 {
+	for left >= 3 {
 		avg := (scores[left] + scores[left-1] + scores[left-2] + scores[left-3]) / 4.0
-		if avg < threshold { break }
+		if avg < threshold {
+			break
+		}
 		left--
 	}
 	right := seed
-	for right < n-4 {
+	for right < n-3 {
 		avg := (scores[right] + scores[right+1] + scores[right+2] + scores[right+3]) / 4.0
-		if avg < threshold { break }
+		if avg < threshold {
+			break
+		}
 		right++
 	}
 	return left, right
 }
 
-//markRegion marks the bool array to true 
-func markRegion(arr []bool, L, R int) {
+// markRegion marks the bool array to true
+func MarkRegion(arr []bool, L, R int) {
 	for i := L; i <= R; i++ {
 		arr[i] = true
 	}
 }
 
-//cleanUpStructure remove takes string as input and remove short Helix and short strands
-func cleanUpStructure(seq string) string {
+// cleanUpStructure remove takes string as input and remove short Helix and short strands
+func CleanUpStructure(seq string) string {
 	runes := []rune(seq)
 	n := len(runes)
 
@@ -143,23 +155,33 @@ func cleanUpStructure(seq string) string {
 	for i := 0; i < n; {
 		if runes[i] == 'H' {
 			j := i
-			for j < n && runes[j] == 'H' { j++ }
+
+			for j < n && runes[j] == 'H' {
+				j++
+			}
+
 			if j-i < 3 {
-				for k := i; k < j; k++ { runes[k] = 'C' }
+				for k := i; k < j; k++ {
+					runes[k] = 'C'
+				}
 			}
 			i = j
 		} else {
 			i++
 		}
 	}
-	
+
 	// Remove short Strand (< 2)
 	for i := 0; i < n; {
 		if runes[i] == 'E' {
 			j := i
-			for j < n && runes[j] == 'E' { j++ }
+			for j < n && runes[j] == 'E' {
+				j++
+			}
 			if j-i < 2 {
-				for k := i; k < j; k++ { runes[k] = 'C' }
+				for k := i; k < j; k++ {
+					runes[k] = 'C'
+				}
 			}
 			i = j
 		} else {
@@ -167,4 +189,22 @@ func cleanUpStructure(seq string) string {
 		}
 	}
 	return string(runes)
+}
+
+// ----- Read data ----- //
+func ReadSequenceFromFile(filepath string) (string, error) {
+	content, err := os.ReadFile(filepath)
+	if err != nil {
+		return "", fmt.Errorf("Cannot open file %s: %w", filepath, err)
+	}
+
+	rawSeq := string(content)
+	cleanSeq := strings.Map(func(r rune) rune {
+		if r == '\n' || r == '\r' || r == ' ' || r == '\t' {
+			return -1
+		}
+		return r
+	}, rawSeq)
+
+	return strings.ToUpper(cleanSeq), nil
 }
